@@ -23,14 +23,28 @@ public class Tools {
 		
 	}
 	
+	public static boolean matchTwitterLink(String link){
+		String regex = "https://twitter\\.com/\\w+/status(es)?/\\d{18}";
+		return link.matches(regex);
+	}
+	
+	public static String getUserNameFromLink(String link){
+		return link.replaceAll("(https://twitter\\.com/)|(/status(es)?/\\d{18})", "");
+	}
+	
 	public static String formateTime(String postedTime){
 		return postedTime.replace('T', ' ').replace(".000Z", "");
 	}
 	
 	
 	public static void main(String[] args) {
-		System.out.println(new Date(Long.valueOf("1337757747000")).toString());
+		System.out.println(new Date(Long.valueOf("1269178260000")).toString());
 		System.out.println(formateTime("2016-03-31T17:21:40.000Z"));
+		System.out.println(getUserNameFromLink("https://twitter.com/_estgfar/status/715071247793668096"));
+		int i = Math.abs("715077347565813760".hashCode())%100;
+		System.out.println(i);
+		String date = "00000000000283838694	wiqasshah	00000000000085433682	ExploreCanada	2016-03-31 14:52:16	mention".split("\t")[4].split(" ")[0];
+		System.out.println(date);
 	}
 
 }
