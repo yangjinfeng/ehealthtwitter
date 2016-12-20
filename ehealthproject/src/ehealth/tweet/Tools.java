@@ -5,6 +5,9 @@ import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
+import org.json.JSONException;
+import org.json.JSONObject;
+
 public class Tools {
 	
 	private static DateFormat format = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
@@ -45,6 +48,14 @@ public class Tools {
 		System.out.println(i);
 		String date = "00000000000283838694	wiqasshah	00000000000085433682	ExploreCanada	2016-03-31 14:52:16	mention".split("\t")[4].split(" ")[0];
 		System.out.println(date);
+		try {
+			JSONObject root = new JSONObject("{\"name\":{\"first\":\"yang\",\"second\":\"jinfeng\"}}");
+			System.out.println(root.has("n1ame"));
+			root.getJSONObject("name");
+		} catch (JSONException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 	}
 
 }

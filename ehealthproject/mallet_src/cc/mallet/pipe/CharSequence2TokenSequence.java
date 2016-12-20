@@ -60,6 +60,9 @@ public class CharSequence2TokenSequence extends Pipe implements Serializable
 
 	public Instance pipe (Instance carrier)
 	{
+		if(carrier == null){
+			return null;
+		}
 		CharSequence string = (CharSequence) carrier.getData();
 		lexer.setCharSequence (string);
 		TokenSequence ts = new StringTokenization (string);

@@ -7,6 +7,13 @@ public class ActorVO {
 	private String verified;
 	private String defaultVerified="False";
 	private String tweetTime;
+	private int kloutScore = -1;
+	
+	
+	
+	public ActorVO() {
+		super();
+	}
 	public String getTweetTime() {
 		return tweetTime;
 	}
@@ -15,6 +22,12 @@ public class ActorVO {
 	}
 
 	
+	public int getKloutScore() {
+		return kloutScore;
+	}
+	public void setKloutScore(int kloutScore) {
+		this.kloutScore = kloutScore;
+	}
 	public String getDefaultVerified() {
 		return defaultVerified;
 	}
@@ -50,6 +63,10 @@ public class ActorVO {
 	public String toActorString(){
 		String vstr = this.verified == null ? this.defaultVerified : this.verified ;
 		return this.actorId+","+  vstr +","+this.actorName;
+	}
+	public String toActorString2(){
+		String vstr = this.verified == null ? this.defaultVerified : this.verified ;
+		return this.actorId+","+  vstr +","+this.actorName+","+kloutScore;
 	}
 	
 	public String toString(){

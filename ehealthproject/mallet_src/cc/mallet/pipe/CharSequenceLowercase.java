@@ -22,12 +22,13 @@ public class CharSequenceLowercase extends Pipe implements Serializable {
 	
 	public Instance pipe (Instance carrier) {
 
-		if (carrier.getData() instanceof String) {
+		if (carrier != null && carrier.getData() instanceof String) {
 			String data = (String) carrier.getData();
 			carrier.setData(data.toLowerCase());
 		}
 		else {
-			throw new IllegalArgumentException("CharSequenceLowercase expects a String, found a " + carrier.getData().getClass());
+//			throw new IllegalArgumentException("CharSequenceLowercase expects a String, found a " + carrier.getData().getClass());
+			return null;
 		}
 
 		return carrier;

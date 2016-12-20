@@ -14,9 +14,16 @@ public class EdgeVO {
 	private int frequency;
 	private String fromVerified;
 	private String toVerified;
+	private int fromKloutScore;
 	
 	
 	
+	public int getFromKloutScore() {
+		return fromKloutScore;
+	}
+	public void setFromKloutScore(int fromKloutScore) {
+		this.fromKloutScore = fromKloutScore;
+	}
 	public String getFromVerified() {
 		return fromVerified;
 	}
@@ -119,6 +126,7 @@ public EdgeVO(String fromUserId, String fromUser, String toUserId, String toUser
 		ActorVO[] result = new ActorVO[2];
 		result[0] = new ActorVO(fromUserId,fromUser,interactTime);
 		result[0].setVerified(fromVerified);
+		result[0].setKloutScore(fromKloutScore);
 		result[1] = new ActorVO(toUserId,toUser,interactTime);
 		if(type.equals("retweet")){
 			result[1].setVerified(toVerified);

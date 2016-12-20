@@ -148,6 +148,9 @@ public class TokenSequenceRemoveStopwords extends Pipe implements Serializable
 	
 	public Instance pipe (Instance carrier)
 	{
+		if(carrier == null){
+			return null;
+		}
 		TokenSequence ts = (TokenSequence) carrier.getData();
 		// xxx This doesn't seem so efficient.  Perhaps have TokenSequence
 		// use a LinkedList, and remove Tokens from it? -?

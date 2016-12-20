@@ -8,16 +8,18 @@ public class TweetVO {
 	private String tweetTime;
 	private String tweetType;
 	private String twitterLang;
+	private String keywords;
 	
 	
 	
-	public TweetVO(String actorId, String tweet, String tweetTime, String tweetType, String twitterLang) {
+	public TweetVO(String actorId, String tweet, String tweetTime, String tweetType, String twitterLang,String tokens) {
 		super();
 		this.actorId = actorId;
 		this.tweet = tweet;
 		this.tweetTime = tweetTime;
 		this.tweetType = tweetType;
 		this.twitterLang = twitterLang;
+		this.keywords = tokens;
 	}
 	public String getActorId() {
 		return actorId;
@@ -54,6 +56,13 @@ public class TweetVO {
 		return new JSONObject(this).toString();
 	}
 	
+	
+	public String getKeywords() {
+		return keywords;
+	}
+	public void setKeywords(String keywords) {
+		this.keywords = keywords;
+	}
 	public static void main(String[] arg ) {
 //		TweetVO vo = new TweetVO();
 //		vo.setActorId("111");
