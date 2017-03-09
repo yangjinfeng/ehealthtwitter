@@ -16,7 +16,7 @@ public class EdgeVO {
 	private String toVerified;
 	private int fromKloutScore;
 	
-	
+	//
 	
 	public int getFromKloutScore() {
 		return fromKloutScore;
